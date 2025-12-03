@@ -1,0 +1,34 @@
+# Requirements for Qwen-7B-Chat-Int8
+# Use with: pip install -r requirements_qwen.txt
+
+# Core deep learning framework
+# Install PyTorch separately first with CUDA support:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Transformers and core dependencies
+transformers==4.37.0  # Updated from 4.32.0 to fix BitsAndBytesConfig compatibility
+accelerate==0.25.0
+tiktoken==0.5.2
+einops==0.7.0
+scipy==1.11.4
+transformers_stream_generator==0.0.4
+peft==0.7.1
+deepspeed==0.12.6
+
+# Quantization libraries
+optimum==1.16.1
+auto-gptq==0.7.1
+
+# Optional but recommended: Flash Attention
+# Uncomment if you want to install (requires compilation)
+# flash-attn==2.3.6
+# ninja
+# packaging
+
+# Additional utilities
+safetensors>=0.4.0
+sentencepiece
+protobuf
+
+# Hybrid search dependencies (BM25)
+rank-bm25==0.2.2
