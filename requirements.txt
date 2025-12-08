@@ -1,0 +1,40 @@
+# Python 3.10+ required
+# BGE-M3 RAG Indexing System - Dependencies
+
+# Core ML/AI Libraries
+#torch>=2.0.0,<2.5.0              # PyTorch for neural networks
+sentence-transformers>=2.3.0      # For BGE-M3 and embeddings
+#transformers>=4.36.0              # Required by sentence-transformers
+#faiss-gpu>=1.7.2                  # GPU-accelerated vector search (use faiss-cpu if no GPU)
+
+# Document Processing
+PyMuPDF>=1.23.0                   # PDF text extraction (imports as 'fitz')
+beautifulsoup4>=4.12.0            # HTML parsing
+lxml>=4.9.0                       # XML/HTML parser for BeautifulSoup
+
+# Text Processing & Search
+rank-bm25>=0.2.2                  # BM25 text search algorithm
+nltk>=3.8.0                       # Optional: for advanced text processing
+
+# Data Science & Numerical Computing
+numpy>=1.24.0,<2.0.0              # Numerical operations
+scipy>=1.10.0                     # Scientific computing (required by some deps)
+
+# Progress & Utilities
+tqdm>=4.65.0                      # Progress bars
+psutil>=5.9.0                     # System and process utilities
+
+# Performance & Optimization
+accelerate>=0.25.0                # Hugging Face acceleration library
+safetensors>=0.4.0                # Safe tensor serialization
+
+# Optional but recommended
+colorama>=0.4.6                   # Colored terminal output (cross-platform)
+huggingface-hub>=0.19.0           # For model downloading (if needed)
+
+# Development tools (optional - uncomment if needed)
+# jupyter>=1.0.0                  # For notebook development
+# ipython>=8.0.0                  # Enhanced Python shell
+# matplotlib>=3.7.0               # For visualization
+# pandas>=2.0.0                   # For data analysis
+
