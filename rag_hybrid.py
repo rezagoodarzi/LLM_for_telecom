@@ -24,13 +24,15 @@ VLLM_URL = "http://localhost:5000/v1/chat/completions"
 VLLM_MODEL_NAME = "qwen3-4b-bnb4"  # Model name as loaded in webui
 
 # RAG settings
-MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+MODEL_NAME = "/home/fatemebookanian/models/BGE-m3"
 CROSS_MODEL = "cross-encoder/ms-marco-MiniLM-L-12-v2"
-RAG_STORE = "./rag_store"
+#CROSS_MODEL = "cross-encoder/qnli-electra-base"
+
+RAG_STORE = "./rag_store_3gpp_bem"
 
 # Retrieval parameters
-TOP_K = 10                    # Initial retrieval
-RERANK_TOP_K = 6              # After reranking
+TOP_K = 12                    # Initial retrieval
+RERANK_TOP_K = 8              # After reranking
 
 # Smart retrieval features
 ENABLE_ADJACENT_RETRIEVAL = True
@@ -59,7 +61,7 @@ SIMILARITY_PENALTY = 0.5
 
 # LLM parameters (for API)
 MODEL_CONFIG = {
-    "temperature": 0.0,
+    "temperature": 0.1,
     "top_p": 0.95,
     "max_tokens": 2048,
     "top_k": 20,
@@ -632,7 +634,7 @@ Answer concisely and cite sources."""
     }
     
     try:
-        r = requests.post(VLLM_URL, json=payload, timeout=240)
+        r = requests.post(VLLM_URL, json=payload, timeout=300)
         r.raise_for_status()
         j = r.json()
         
