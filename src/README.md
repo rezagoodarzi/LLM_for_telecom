@@ -41,7 +41,7 @@ A professional RAG (Retrieval-Augmented Generation) system designed for technica
 ## 📁 Directory Structure
 
 ```
-rag_system_v2/
+src/
 ├── config/
 │   ├── __init__.py
 │   └── settings.py         # All configuration in one place
