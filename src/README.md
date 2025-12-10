@@ -2,7 +2,7 @@
 
 A professional RAG (Retrieval-Augmented Generation) system designed for technical documents like 3GPP specifications, vendor manuals, and telecom documentation.
 
-## 🎯 Key Improvements Over v1
+## Key Improvements Over v1
 
 | Issue | Old Value | New Value | Impact |
 |-------|-----------|-----------|--------|
@@ -14,7 +14,7 @@ A professional RAG (Retrieval-Augmented Generation) system designed for technica
 | TOP_K | 12 | 20 | More candidates before reranking |
 | RERANK_TOP_K | 8 | 12 | Better final selection |
 
-## ✨ Features
+## Features
 
 ### Before Indexing (Document Cleaning)
 1. **Version Selection**: Automatically keeps only the newest version per document family
@@ -38,7 +38,7 @@ A professional RAG (Retrieval-Augmented Generation) system designed for technica
 13. **Multi-Vendor Warnings**: Alerts when mixing vendors in response
 14. **Checkpoint Resume**: Interrupted indexing can be resumed
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 src/
@@ -61,7 +61,7 @@ src/
 └── README.md
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Build the Index
 
@@ -81,7 +81,7 @@ Options:
 python query.py
 ```
 
-## 💡 Query Tips
+## Query Tips
 
 ### Exact Matches
 Use quotes for exact term matching:
@@ -119,7 +119,7 @@ The system automatically detects technical IDs like:
 exit       - Exit
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 All settings are in `config/settings.py`. Key parameters:
 
@@ -153,7 +153,7 @@ SIMILARITY_THRESHOLD = 0.92   # Higher = keep more similar content
 ENABLE_DEDUPLICATION = True   # Remove near-duplicates from results
 ```
 
-## 🔧 Customization
+## Customization
 
 ### Adding New Vendors
 Edit `utils/metadata_extractor.py`:
@@ -183,14 +183,14 @@ HYBRID_WEIGHTS = {
 }
 ```
 
-## 📊 Performance Tips
+## Performance Tips
 
 1. **For exact technical IDs**: Use quotes and increase keyword weight
 2. **For conceptual queries**: Increase semantic weight
 3. **For vendor-specific**: Always use vendor filter
 4. **For formula lookup**: Use quotes around function names
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Index not found"
 Run `build_index.py` first to create the index.
@@ -207,7 +207,7 @@ Reduce `BATCH_SIZE` in settings.py (try 4 or 8).
 3. Enable vendor filtering
 4. Use exact quotes for technical terms
 
-## 📝 License
+## License
 
 MIT License - Feel free to use and modify.
 
