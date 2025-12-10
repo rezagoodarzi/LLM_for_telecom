@@ -1,9 +1,9 @@
-# 🔗 Smart Continuation Query System
+# Smart Continuation Query System
 
 ## Overview
 Your RAG system now has **enterprise-grade continuation query detection and handling**! This makes conversations with the system feel natural and context-aware.
 
-## 🎯 What Was Enhanced
+## What Was Enhanced
 
 ### 1. **Massively Expanded Continuation Detection** (150+ patterns)
 
@@ -55,22 +55,22 @@ The system now uses smart logic to detect continuations:
 
 ```python
 # Multi-word phrase detection (more accurate)
-"tell me more about" → ✅ Detected
+"tell me more about" → Detected
 
 # Position-based detection
 Query: "More details please" 
-→ "More" is in first 5 words → ✅ Strong continuation signal
+→ "More" is in first 5 words → Strong continuation signal
 
 # Short query heuristics  
 Query: "What about it?"
-→ Short query (3 words) + pronoun ("it") → ✅ Continuation
+→ Short query (3 words) + pronoun ("it") → Continuation
 
 # Grammar-based detection
 Query: "And what about the safety requirements?"
-→ Starts with "And" → ✅ Continuation
+→ Starts with "And" → Continuation
 
 Query: "But how does that work?"
-→ Starts with "But" → ✅ Continuation
+→ Starts with "But" → Continuation
 ```
 
 ### 3. **Context-Aware Retrieval**
@@ -126,7 +126,7 @@ This gives the LLM:
 - ✅ Ability to reference previous answers
 - ✅ More coherent multi-turn conversations
 
-## 📊 Usage Examples
+## Usage Examples
 
 ### Example 1: Simple Follow-up
 ```
@@ -134,9 +134,9 @@ User: What are the installation requirements?
 System: [Retrieves and answers]
 
 User: Tell me more
-System: 🔗 Continuation query detected
-         📚 Including context from previous retrieval...
-         🔄 Enhanced query with previous context
+System:  Continuation query detected
+         Including context from previous retrieval...
+         Enhanced query with previous context
          [Returns expanded information from same topic]
 ```
 
@@ -181,7 +181,7 @@ System: 🔗 Continuation query detected
          [Returns specs for cooling system]
 ```
 
-## 🎯 Detection Accuracy
+##  Detection Accuracy
 
 The system now correctly identifies:
 
@@ -196,7 +196,7 @@ The system now correctly identifies:
 ✅ **Short pronouns**: "it", "they", "them" (in short queries)
 ✅ **Grammar patterns**: Starts with "And", "But"
 
-## 🚀 Performance Benefits
+##  Performance Benefits
 
 ### Before Enhancement:
 - Continuation queries treated as new queries
@@ -212,7 +212,7 @@ The system now correctly identifies:
 - LLM receives full conversation context
 - Natural multi-turn conversations
 
-## 💡 Tips for Users
+##  Tips for Users
 
 ### To trigger continuation mode:
 1. **Use continuation words**: "more", "continue", "also", "additionally"
@@ -232,7 +232,7 @@ Q4: "What about mechanical safety?"
 # Each query builds on previous context!
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 Adjust continuation settings in `rag_qwen_smart.py`:
 
@@ -251,7 +251,7 @@ recent_history = CONVERSATION_HISTORY[-2:]  # Last 2 turns
 'boost': 1.3  # Adjacent chunks boost
 ```
 
-## 📈 Technical Implementation
+## Technical Implementation
 
 ### Detection Flow:
 ```
@@ -283,7 +283,7 @@ IF continuation detected:
   4. Generate context-aware answer
 ```
 
-## 🎉 Result
+##  Result
 
 Your RAG system now has:
 - ✅ **Human-like conversation flow**
