@@ -6,7 +6,7 @@ Main script for building RAG index using Docling-enhanced document processing.
 
 Usage:
     python build_index_docling.py --docs-dir /path/to/docs
-    python build_index_docling.py --docs-dir /path/to/docs --enable-ocr
+    python build_index_docling.py --docs-dir /home/fatemebookanian/qwen_code/PDF --enable-ocr
     python build_index_docling.py --docs-dir /path/to/docs --fast-mode
 
 Features:
@@ -15,7 +15,7 @@ Features:
 - Image OCR extraction
 - Duplicate detection
 - Version selection
-- Progress tracking with checkpoints
+- Progress tracking with checkpoints                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 """
 
 import os
@@ -54,7 +54,17 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+import gc
+try:
+    import torch
+except:
+    torch = None
 
+def clear_memory():
+    """Clear GPU and CPU memory after each document."""
+    gc.collect()
+    if torch and torch.cuda.is_available():
+        torch.cuda.empty_cache()
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
@@ -67,7 +77,7 @@ def parse_args():
         default=settings.DOCS_DIR,
         help='Directory containing documents'
     )
-    
+
     parser.add_argument(
         '--output-dir',
         type=str,
@@ -241,6 +251,7 @@ def process_documents(
             result = processor.process_file(filepath)
             if result:
                 results.append(result)
+                clear_memory()
             processed_files.add(filepath)
             
             # Save checkpoint

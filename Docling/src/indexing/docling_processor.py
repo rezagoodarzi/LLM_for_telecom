@@ -1,4 +1,9 @@
 ﻿"""
+import gc
+try:
+    import torch
+except ImportError:
+    torch = None
 Docling Document Processor
 ===========================
 
@@ -940,3 +945,6 @@ if __name__ == "__main__":
     for feature, available in features.items():
         status = "OK" if available else "MISSING"
         print(f"  {status} {feature}")
+
+def clear_gpu_memory():
+    " \\Clear GPU and CPU memory.\\\

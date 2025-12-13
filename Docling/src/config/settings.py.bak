@@ -1,5 +1,4 @@
 """
-
 RAG System Configuration - All settings in one place
 =====================================================
 
@@ -268,7 +267,7 @@ USE_DOCLING = True
 # Docling processing options
 DOCLING_CONFIG = {
     # OCR settings
-    'enable_ocr': False,
+    'enable_ocr': True,
     'ocr_engine': 'easyocr',     # 'easyocr' or 'tesseract'
     'ocr_languages': ['en'],     # Languages for OCR
     
@@ -334,7 +333,7 @@ ATOMIC_ELEMENTS = [
     'equation',
     'code_block',
 ]
-
+﻿
 
 # =============================================================================
 # MILVUS CONFIGURATION
